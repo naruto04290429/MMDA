@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />    
+        <title>Photo Viewer</title>
+        <script src="linkedlist.js"> </script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <h1><u>Viewer</u></h1>
+
+        <div id="photo" onclick="x.getNextPhoto()"></div>
+
+        <hr>
+
+        <form id="form">
+
+
+            Photo's Folder: <input type="text" id="folder_name" value="umcp/" /> <br>
+            Common Name: <input type="text" id="common_name" value="college" /> <br>
+            Start Photo Number: <input type="number" id="start_photo" value="1" />
+            End Photo Number: <input type="number" id="end_photo" value="1" /> <br>
+
+            <input type="button" id="action" onclick="return processData()" value="Slide Show" />
+            
+            <input type="button" id="action" onclick="return x.randomize()" value="Random Slide Show">
+            
+            <input type="button" id="action" onclick="return x.getNextPhoto()" value="Next Slide">
+            
+            <input type="button" id="action" onclick="return x.getPrevPhoto()" value="Previous Slide">
+
+            <input type="button" onclick="x.cyclePhotos()" value="Auto Slide Show">
+
+            <input type="button" onclick="x.randomCyclePhotos()" value="Auto Random Slide Show">            
+
+            <input type="button" onclick="x.stopCyclingPhotos()" value="Stop Slide Show">
+
+            <br>
+
+            <input type="button" onclick="x.resetPhotoViewer()" value="Reset">
+
+        </form>
+
+        <script>
+
+            let x = new Viewer();
+            x.getNextPhoto();
+
+        </script>
+    </body>
+</html>

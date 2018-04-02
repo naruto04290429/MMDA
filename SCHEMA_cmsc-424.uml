@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>a659e8cd-7137-4f65-97d5-764df5ca0db2.SCHEMA:cmsc-424</OriginalElement>
+  <nodes>
+    <node x="321.00000000000006" y="190.5">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Sub_Category</node>
+    <node x="504.50000000000006" y="380.0">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Tag</node>
+    <node x="0.0" y="380.0">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Daughter</node>
+    <node x="32.00000000000006" y="124.0">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.File</node>
+    <node x="275.5" y="0.0">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Category</node>
+    <node x="563.0" y="190.0">a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Keyword</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.File" target="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Category">
+      <point x="0.0" y="-103.0" />
+      <point x="166.50000000000006" y="99.0" />
+      <point x="309.1666666666667" y="99.0" />
+      <point x="-67.33333333333331" y="37.0" />
+    </edge>
+    <edge source="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Tag" target="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.File">
+      <point x="-53.0" y="-36.5" />
+      <point x="557.5" y="355.0" />
+      <point x="256.16666666666674" y="355.0" />
+      <point x="89.66666666666669" y="103.0" />
+    </edge>
+    <edge source="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Daughter" target="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.File">
+      <point x="-55.5" y="-36.5" />
+      <point x="55.5" y="355.0" />
+      <point x="76.83333333333337" y="355.0" />
+      <point x="-89.66666666666667" y="103.0" />
+    </edge>
+    <edge source="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Sub_Category" target="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Category">
+      <point x="-55.50000000000006" y="-36.5" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Tag" target="a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Keyword">
+      <point x="53.0" y="-36.5" />
+      <point x="0.0" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="382.0" y="226.5" />
+  <SelectedNodes>
+    <node>a659e8cd-7137-4f65-97d5-764df5ca0db2.TABLE:cmsc-424.Keyword</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+

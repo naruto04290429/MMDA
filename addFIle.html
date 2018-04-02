@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Reach Query</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DAGR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reachquery.html">Reach Query
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="addFile.html">Add File
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listing_category.php">Manage Categories
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Filepath</span>
+                    <input type="text" class="form-control" aria-label="Name" aria-describedby="basic-addon1" id='path'>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-6">
+                <button type="button" class="btn btn-primary" onclick="upload_file()">Upload</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12" id="confirm"></div>                
+        </div>
+        
+    </div>
+
+
+    <!-- Optional JavaScript -->
+
+    <script>
+       		function upload_file() {
+                path = document.getElementById("path").value;
+                console.log(path);
+    
+                $.ajax({
+                          method: "POST",
+                          url: "./file_management.php",
+                          //dataType: "json",
+                          data: {
+                              path: path
+                          },
+                          success: function (data) {
+                            document.getElementById('confirm').innerHTML = data;
+                            console.log(data);
+                        },
+                        error: function(){
+                            console.log("error");
+                        }
+                    });
+            }
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>

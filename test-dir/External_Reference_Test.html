@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head> 
+		<meta charset="UTF-8" /> 
+		<title>Mouse Drawing</title>
+		<script src="linkedlist.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+    </head>
+
+    <body>
+		
+			<div id="canvasdiv"></div>
+		
+		<br>
+		Color: <input type="color" value="#FF0000" id="drawColor"><br>		
+		<button onclick="r.startRecording()">Start Recording</button>		
+		<button onclick="r.stopRecording()">Stop Recording</button>
+		<button onclick="r.play()">Play</button>		
+		<button onclick="r.saveRecording()">Save Recording</button>
+		<button onclick="r.loadRecording()">Retrieve Saved Recording</button>		
+		<button onclick="r.clearScreen()">Clear Screen</button>
+		<button onclick="r.reset()">Reset</button>
+
+		<script>
+			let r = new Recorder("blah", "blah");
+		</script>
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "CMSC424 Plug-in",
+  "description": "This extension will be used for CMSC424 Final Project",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "plug_in.html"
+  },
+  "permissions": [
+   "activeTab",
+   "<all_urls>"
+   ]
+}

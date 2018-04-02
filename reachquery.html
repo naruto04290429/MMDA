@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Reach Query</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DAGR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="reachquery.html">Reach Query
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addFile.html">Add File
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listing_category.php">Manage Categories
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">File GUID</span>
+                    <input type="text" class="form-control" aria-label="Name" aria-describedby="basic-addon1" id='file-guid'>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Depth</span>
+                    <input type="number" class="form-control" aria-label="Name" aria-describedby="basic-addon1" id='depth'>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="down" autocomplete="off" checked onclick="activeDown()"> Down
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="up" autocomplete="off" onclick="activeUp()"> Up
+                    </label>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                    <button type="button" class="btn btn-primary" onclick="displayResults()">Display Results</button>
+            </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+
+            </div>
+
+        </div>
+    </div>
+    <div id="files" style="min-height:100vh;"></div>
+
+    <!-- Optional JavaScript -->
+
+    <script>
+        function displayResults() {
+            guid = document.getElementById('file-guid').value;
+            depth = document.getElementById('depth').value;
+
+            godown = document.getElementById('down').checked;
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                //console.log(this.responseText);
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    document.getElementById("files").innerHTML = this.responseText;
+
+                }
+            };
+            document.getElementById("files").innerHMTL = 'ff';
+            xmlhttp.open("GET", "./actions/reachQuery.php?GUID=" + guid + "&Depth=" + depth + "&Down=" + godown, true);
+            xmlhttp.send();
+        }
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
